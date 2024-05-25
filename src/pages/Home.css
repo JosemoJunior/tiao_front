@@ -1,0 +1,25 @@
+.tiao-component {
+    background-color: #f0f0f0;
+  }
+  
+  .intro-section {
+    padding: 2rem;
+  }
+  
+  .intro-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .intro-description {
+    color: #666666;
+  }
+  
+  .theme-color {
+    color: #1e90ff;
+  }
+  
+  .theme-bg-color {
+    background-color: #1e90ff;
+  }

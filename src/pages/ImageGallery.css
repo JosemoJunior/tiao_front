@@ -1,0 +1,12 @@
+.image-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-gallery-inner {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+  }

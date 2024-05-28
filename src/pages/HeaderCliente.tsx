@@ -2,9 +2,11 @@
 import '../style/Header.css';
 import logo from '../images/tiao.png'
 import { Link } from 'react-router-dom';
+import logout from '../utils/authUtils';
 
 // Adicionar Menu do Cliente
 const HeaderCliente = () => {
+
   return (
     <header className="header">
       <Link to="/">
@@ -13,9 +15,9 @@ const HeaderCliente = () => {
           <h1 className="logo-text">TIÃO</h1>
         </div>
       </Link>
-      <Link to="/">
+      <Link to="/login">
         <div>
-          <button className="btn">Logout</button>
+          <button className="btn" onClick={logout}>Logout</button>
         </div>
       </Link>
     </header>

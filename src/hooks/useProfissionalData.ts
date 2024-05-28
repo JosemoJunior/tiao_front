@@ -7,7 +7,7 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getIte
 
 const KEY = 'profissional-data';
 
-const fetchData = async (): AxiosPromise<userData[]> => {
+const fetchAllData = async (): AxiosPromise<userData[]> => {
     try {
         const response = axios.get(API_URL + '/user/profissional');
         //localStorage.setItem("error", (await response).status.toString());
@@ -28,7 +28,7 @@ const fetchData = async (): AxiosPromise<userData[]> => {
 // Não está sendo utilizado ainda
 export function useProfissionalData() {
     const query = useQuery({
-        queryFn: fetchData,
+        queryFn: fetchAllData,
         queryKey: [KEY],
         retry: 2,
     })
@@ -41,7 +41,7 @@ export function useProfissionalData() {
 
 export function useAllProfissionalData() {
     const query = useQuery({
-        queryFn: fetchData,
+        queryFn: fetchAllData,
         queryKey: [KEY],
         retry: 2
     })

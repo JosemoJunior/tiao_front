@@ -30,6 +30,8 @@ function Login() {
             localStorage.setItem('type', "");
             localStorage.setItem('name', "");
 
+            localStorage.setItem('email', email);
+
             await mutate({ email, password });
         } catch (error) {
             setError('Erro ao fazer login. Verifique suas credenciais.');

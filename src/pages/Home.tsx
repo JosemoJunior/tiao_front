@@ -1,9 +1,53 @@
 //import React from 'react';
-import './Home.css';
+import '../style/Home.css';
 //import './ImageGallery.css'; 
-import './TalentBenefits.css'; 
-import './ArrowButton.css'; 
+import '../style/TalentBenefits.css'; 
+import '../style/ArrowButton.css'; 
 import BenefitsCard from '../components/card/BenefitsCard';
+
+
+// Componente Principal
+const Home = () => {
+  return (
+    <div className="tiao-component">
+      <div className="decorative-elements">
+        <div className="element"></div>
+        <div className="element"></div>
+        <div className="element"></div>
+      </div>
+      <section className="main-section">
+        <h2 className="section-title">Encontre talentos em diversas áreas em um só lugar!</h2>
+        <p className="section-description">
+          Nosso sistema conecta você a profissionais qualificados, prontos para atender às suas
+          necessidades. Simplifique sua busca e contrate os melhores em apenas alguns cliques.
+          Descubra como nossos serviços podem fazer a diferença para você.
+        </p>
+        {/* <ImageGallery /> */}
+      </section>
+      <section className="benefits-section">
+        <TalentBenefits />
+      </section>
+    </div>
+  );
+};
+
+const TalentBenefits = () => {
+  return (
+    <div className="talent-benefits">
+      <div className="benefits">
+        <h3 className="benefits-title">Você é um desses talentos?</h3>
+        <p className="benefits-description">
+          Destaque suas habilidades e alcance novos clientes! Inscreva-se agora em nosso sistema
+          para conectar-se a uma vasta rede de usuários em busca de talentos como o seu. Aumente sua
+          visibilidade e oportunidades de negócio hoje mesmo.
+        </p>
+      </div>
+      <div className="benefits-card-container">
+        <BenefitsCard />
+      </div>
+    </div>
+  );
+};
 
 /**
  *  
@@ -39,50 +83,5 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction }) => {
    );
  };
  */
-
-
-// Componente TalentBenefits
-const TalentBenefits = () => {
-  return (
-    <div className="talent-benefits">
-      <div className="benefits">
-        <h3 className="benefits-title">Você é um desses talentos?</h3>
-        <p className="benefits-description">
-          Destaque suas habilidades e alcance novos clientes! Inscreva-se agora em nosso sistema
-          para conectar-se a uma vasta rede de usuários em busca de talentos como o seu. Aumente sua
-          visibilidade e oportunidades de negócio hoje mesmo.
-        </p>
-      </div>
-      <div className="benefits-card-container">
-        <BenefitsCard />
-      </div>
-    </div>
-  );
-};
-
-// Componente TiaoComponent
-const Home = () => {
-  return (
-    <div className="tiao-component">
-      <div className="decorative-elements">
-        <div className="element"></div>
-        <div className="element"></div>
-        <div className="element"></div>
-      </div>
-      <section className="main-section">
-        <h2 className="section-title">Encontre talentos em diversas áreas em um só lugar!</h2>
-        <p className="section-description">
-          Nosso sistema conecta você a profissionais qualificados, prontos para atender às suas
-          necessidades. Simplifique sua busca e contrate os melhores em apenas alguns cliques.
-          Descubra como nossos serviços podem fazer a diferença para você.
-        </p>
-        {/* <ImageGallery /> */}
-      </section>
-      <section className="benefits-section">
-        <TalentBenefits />
-      </section>
-    </div>
-  );
-};
 
 export default Home;

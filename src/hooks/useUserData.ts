@@ -1,12 +1,13 @@
 import axios, { AxiosPromise } from "axios"
 import { userData } from "../interface/userData";
 import { useQuery } from "@tanstack/react-query";
+import { API_URL } from "../config";
 
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
 
-const API_URL = 'http://localhost:8080';
+const KEY = 'user-data';
 
-const fetchData = async (): AxiosPromise<userData[]> => {
+const fetchData = async (): AxiosPromise<userData> => {
     const email = localStorage.getItem('email');
     const emailData = { email: email };
     const response = axios.post(API_URL + '/user/profile', emailData);
@@ -16,7 +17,7 @@ const fetchData = async (): AxiosPromise<userData[]> => {
 export function useUserData() {
     const query = useQuery({
         queryFn: fetchData,
-        queryKey: ['user-data'],
+        queryKey: [KEY],
         retry: 2
     })
 

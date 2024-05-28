@@ -55,9 +55,3 @@ Usados para fazer requisições para o back:
 	
 	// Rotas do react para mudar componente
 	npm install react-router-dom
-	
-	
-The gray place below "Quero me cadastrar" and "Entrar" is a carousel... It will change the img every 15 seconds.
-The place with many imgs on the middle is a carousel too, but they dont change by time, the tiny images from left and right are the arrows of carousel to move the imgs... the img with name "Eletricista" is an effect when the mouse is over the img.
-	
-The place with 150x150 imgs is a carousel, the tiny images from left and right are the arrows of carousel to move the imgs... the previous img has a "Eletricista" 

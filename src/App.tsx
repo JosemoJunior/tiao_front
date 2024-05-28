@@ -3,19 +3,20 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 
-import RouteSwitch from './routes/routes'
-import Header from './pages/Header';
+import { RouterSwitch } from './routes/routes'
+//import Header from './pages/Header';
 
 const queryClient = new QueryClient()
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-        <Header />
-        <RouteSwitch/>
+        <RouterSwitch/>
     </QueryClientProvider>
   );
 }
+
+export default App;
 /**
  * 
 <ToastContainer
@@ -29,5 +30,3 @@ function App() {
   pauseOnHover
 />
  */
-
-export default App;

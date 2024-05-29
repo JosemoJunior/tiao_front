@@ -27,10 +27,10 @@ function Register() {
     const { mutate, isSuccess } = useRegister();
     const navigate = useNavigate();
 
-    enum ProfissaoEnum {
-        EngenheiroCivil = 'Engenheiro Civil',
-        Arquiteto = 'Arquiteto'
-    }
+    //enum ProfissaoEnum {
+    //    EngenheiroCivil = 'Engenheiro Civil',
+    //    Arquiteto = 'Arquiteto'
+    //}
 
  useEffect(() => {
      if(!isSuccess) return;

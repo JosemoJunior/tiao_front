@@ -1,0 +1,23 @@
+.talent-benefits {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.benefit-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: #666666;
+}
+
+.benefits-card-container {
+    flex: 1; /* Faz o card de benefícios ocupar todo o espaço disponível */
+    max-width: 300px; /* Defina uma largura máxima para o card de benefícios */
+    margin-left: auto; /* Move o card de benefícios para a direita */
+}
+
+.benefits {
+    flex: 1; 
+}

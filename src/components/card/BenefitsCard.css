@@ -1,0 +1,24 @@
+.card {
+    max-width: 24rem; /* Ajuste conforme necessário */
+    margin: auto;
+    background-color: #ffffff; /* Branco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 0.5rem; /* Cantos arredondados */
+    padding: 1.5rem; /* Espaçamento interno */
+  }
+  
+  .title {
+    font-size: 1.25rem; /* Tamanho da fonte */
+    font-weight: 600; /* Negrito */
+    color: #4b5563; /* Cinza escuro */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+  }
+  
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .text {
+    color: #6b7280; /* Cinza médio */
+  }

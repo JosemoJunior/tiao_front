@@ -1,0 +1,57 @@
+1 - Criar projeto
+
+Tem que ter o Node.js instalado no pc para o comando inicial de criação de projeto funcionar.
+É só baixar no site deles lá e pah (aparentemente, pra atualizar, tem que baixar de novo)
+
+Na pasta que vc quer fazer o projeto, abra o terminal:
+Comando:
+npm create vite@latest
+
+	O Vite tem várias opções de início.. No caso, escolhi:
+
+		React
+		Typescript
+
+	Vai pedir o nome do projeto... no fim, ele cria uma pasta com o nome que vc escolheu
+	
+		Se ainda estiver no terminal, entrar na pasta que vc escolheu (cd tiao_front)
+		Depois abrir digitar o comando para abrir o vscode (code .) [Sim, tem um espaço e depois um ponto]
+		
+	Quando abrir, o projeto vem com um arquivo package.json que funciona igual ao Maven.
+		Nesse arquivo tem referências de bibliotecas que vc tem que dar um comando pra baixar.
+		
+	Comando pra baixar as bibliotecas de dentro do package.json:
+		npm install
+		
+	Note que dentro tem "devDependencies" mencionando algumas bibliotecas... Como elas são
+		dependencias Dev, quando for pra PRODUÇÃO, essas dependências não devem ir... daí é só apagar
+		
+	Testar com o comando:
+		npm run dev	
+	
+------
+
+O main.tsx declara a conexão do React com o index.html pegando o Id "root" e injeta/renderiza o App.tsx dentro
+
+	ReactDOM.createRoot(document.getElementById('root')!).render(
+	  <React.StrictMode>
+		<App />
+	  </React.StrictMode>,
+	)
+
+E o componente App.tsx geralmente é utilizado para declarar as rotas.
+
+
+
+
+
+Comandos necessários:
+
+Usados para fazer requisições para o back:
+
+	// Envio de Requisições http 
+	npm install @tanstack/react-query
+	npm install axios
+	
+	// Rotas do react para mudar componente
+	npm install react-router-dom

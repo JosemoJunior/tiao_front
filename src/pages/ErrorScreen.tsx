@@ -10,6 +10,9 @@ interface ErrorScreenProps {
     let errorMessage = '';
   
     switch (errorCode) {
+      case 400:
+        errorMessage = 'Email já está em uso.';
+        break;
       case 403:
         errorMessage = 'Acesso proibido. Você não tem permissão para acessar esta página.';
         break;

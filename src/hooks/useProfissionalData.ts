@@ -10,7 +10,7 @@ const KEY = 'profissional-data';
 const fetchAllData = async (): AxiosPromise<userData[]> => {
     try {
         const response = axios.get(API_URL + '/user/profissional');
-        //localStorage.setItem("error", (await response).status.toString());
+        localStorage.setItem("error", (await response).status.toString());
         return response;
     } catch (error) {
         if (axios.isAxiosError(error)) {

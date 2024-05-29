@@ -2,7 +2,7 @@
 import '../style/Header.css';
 import logo from '../images/tiao.png'
 import { Link } from 'react-router-dom';
-import { LOGIN_PATH } from '../routes/routes'
+import { LOGIN_PATH, REGISTER_PATH } from '../routes/routes'
 
 
 const HeaderBeforeLogin = () => {
@@ -15,7 +15,7 @@ const HeaderBeforeLogin = () => {
         </div>
       </Link>
       <div>
-        <button className="btn">Quero me cadastrar</button>
+        <Link to={REGISTER_PATH}><button className="btn">Quero me cadastrar</button></Link>
         <Link to={LOGIN_PATH}><button className="btn btn-primary">Entrar</button></Link>
       </div>
     </header>

@@ -20,11 +20,7 @@ export function useLogin() {
         mutationFn: postLogin,
         retry: 2,
         onSuccess: (data: AxiosResponse<any, any>) => {
-            localStorage.setItem('token', data.data?.Token);
-            //localStorage.setItem('token', "");
-            localStorage.setItem('type', data.data?.type);
-            localStorage.setItem('name', data.data?.name);
-            axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.data?.Token;
+            storeLocalData(data);
         }
     });
 
@@ -40,8 +36,19 @@ const postRegister = async (data: userData): AxiosPromise<any> => {
 export function useRegister() {
     const mutate = useMutation({
         mutationFn: postRegister,
-        retry: 2
+        retry: 2,
+        onSuccess: (data: AxiosResponse<any, any>) => {
+            storeLocalData(data);
+        }
     });
 
     return mutate;
+}
+
+function storeLocalData(data: AxiosResponse<any, any>){
+    localStorage.setItem('token', data.data?.Token);
+    //localStorage.setItem('token', "");
+    localStorage.setItem('type', data.data?.type);
+    localStorage.setItem('name', data.data?.name);
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.data?.Token;
 }

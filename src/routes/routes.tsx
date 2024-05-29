@@ -1,12 +1,13 @@
-import HeaderBeforeLogin from '../pages/HeaderBeforeLogin';
-import HeaderCliente from '../pages/HeaderCliente';
-import HeaderProfissional from '../pages/HeaderProfissional';
+//import HeaderBeforeLogin from '../pages/HeaderBeforeLogin';
+import NavBar from "../shared/components/Navbar/NavBar";
+import NavBarCliente from "../shared/components/Navbar/NavBarCliente";
+import NavBarProfissional from "../shared/components/Navbar/NavBarProfissional";
 import HomeCliente from '../pages/HomeCliente';
 import HomeProfissional from '../pages/HomeProfissional';
 import ErrorScreen from '../pages/ErrorScreen';
 import Register from '../pages/Register';
 import React from 'react';
-import Login from '../pages/Login';
+import FormLogin from "../shared/components/FormLogin/FormLogin";
 import Home from '../pages/Home';
 import {
     BrowserRouter,
@@ -23,15 +24,15 @@ const RouterSwitch: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HeaderBeforeLogin />} />
-        <Route path={LOGIN_PATH} element={<HeaderBeforeLogin />} />
-        <Route path={REGISTER_PATH} element={<HeaderBeforeLogin />} />
-        <Route path={CLIENTE_PATH} element={<HeaderCliente />} />
-        <Route path={PROFISSIONAL_PATH} element={<HeaderProfissional />} />
+        <Route path="/" element={<NavBar />} />
+        <Route path={LOGIN_PATH} element={<NavBar />} />
+        <Route path={REGISTER_PATH} element={<NavBar />} />
+        <Route path={CLIENTE_PATH} element={<NavBarCliente />} />
+        <Route path={PROFISSIONAL_PATH} element={<NavBarProfissional />} />
       </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path={LOGIN_PATH} element={<Login />} />
+        <Route path={LOGIN_PATH} element={<FormLogin />} />
         <Route path={REGISTER_PATH} element={<Register />} />
         <Route path={CLIENTE_PATH} element={<HomeCliente />} />
         <Route path={PROFISSIONAL_PATH} element={<HomeProfissional />} />

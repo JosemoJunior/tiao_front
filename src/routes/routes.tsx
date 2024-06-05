@@ -1,7 +1,4 @@
-//import HeaderBeforeLogin from '../pages/HeaderBeforeLogin';
 import NavBar from "../shared/components/Navbar/NavBar";
-import NavBarCliente from "../shared/components/Navbar/NavBarCliente";
-import NavBarProfissional from "../shared/components/Navbar/NavBarProfissional";
 import HomeCliente from '../pages/HomeCliente';
 import HomeProfissional from '../pages/HomeProfissional';
 import ErrorScreen from '../pages/ErrorScreen';
@@ -9,31 +6,35 @@ import Register from '../pages/Register';
 import React from 'react';
 import FormLogin from "../shared/components/FormLogin/FormLogin";
 import Home from '../pages/Home';
+import { CLIENTE, PROFISSIONAL } from '../config';
+import {
+  LOGIN_PATH,
+  REGISTER_PATH, 
+  CLIENTE_PATH, 
+  PROFISSIONAL_PATH
+} from '../utils/paths';
 import {
     BrowserRouter,
     Routes,
     Route
   } from "react-router-dom";
 
-const LOGIN_PATH = '/login';
-const REGISTER_PATH = '/register';
-const CLIENTE_PATH = '/cliente';
-const PROFISSIONAL_PATH = '/profissional';
 
 const RouterSwitch: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavBar />} />
-        <Route path={LOGIN_PATH} element={<NavBar />} />
-        <Route path={REGISTER_PATH} element={<NavBar />} />
-        <Route path={CLIENTE_PATH} element={<NavBarCliente />} />
-        <Route path={PROFISSIONAL_PATH} element={<NavBarProfissional />} />
+        <Route path="/" element={<NavBar type="home" />} />
+        <Route path={LOGIN_PATH} element={<NavBar type="login"/>} />
+        <Route path={REGISTER_PATH+'/*'} element={<NavBar type="signup"/>} />
+        <Route path={CLIENTE_PATH} element={<NavBar type="client"/>} />
+        <Route path={PROFISSIONAL_PATH} element={<NavBar type="professional"/>} />
       </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path={LOGIN_PATH} element={<FormLogin />} />
-        <Route path={REGISTER_PATH} element={<Register />} />
+        <Route path={REGISTER_PATH+CLIENTE_PATH} element={<Register type={CLIENTE} />} />
+        <Route path={REGISTER_PATH+PROFISSIONAL_PATH} element={<Register type={PROFISSIONAL} />} />
         <Route path={CLIENTE_PATH} element={<HomeCliente />} />
         <Route path={PROFISSIONAL_PATH} element={<HomeProfissional />} />
 

@@ -50,8 +50,21 @@ Comandos necessários:
 Usados para fazer requisições para o back:
 
 	// Envio de Requisições http 
-	npm install @tanstack/react-query
 	npm install axios
+	
+	npm install @tanstack/react-query
 	
 	// Rotas do react para mudar componente
 	npm install react-router-dom
+
+	// ...
+	npm i @hookform/resolvers
+	npm i @mui/material/styles
+	npm i @emotion/react
+	npm i @emotion/styled
+	npm i @mui/icons-material
+	npm i @mui/material
+	npm i react-hook-form
+	npm i yup
+	
+	

@@ -6,6 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { CLIENTE_PATH, PROFISSIONAL_PATH } from '../../../routes/routes'
 import { CLIENTE, PROFISSIONAL } from '../../../config';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLogin } from '../../../hooks/useAuthHooks';
 import {
   ContentTextAndLink,
   LoginButton,
@@ -19,9 +21,7 @@ import {
   LoginAlert,
   Text
 } from './styles';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLogin } from '../../../hooks/useAuthHooks';
-//import colors from '../../../utils/colors';
+import CustomButtonModal from '../../../modal/modal';
 
 const schema = yup.object().shape({
   email: yup.string().email('E-mail inválido').required('O e-mail é obrigatório'),
@@ -120,9 +120,7 @@ const FormLogin: React.FC = () => {
             <LoginButton variant='outlined' type="submit">Entrar</LoginButton>
             <ContentTextAndLink component='div'>
               <Text>Não tem uma conta?</Text>
-              <Link to="/register">
-                <LoginLink style={{ textAlign: 'center' }} >Faça seu Cadastro!</LoginLink>
-              </Link>
+              <CustomButtonModal modalType="login"/>
             </ContentTextAndLink>
         </LoginBoxActions>
       </LoginCard>

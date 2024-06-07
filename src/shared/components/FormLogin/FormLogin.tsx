@@ -4,7 +4,7 @@ import { IconButton, InputAdornment } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { CLIENTE_PATH, PROFISSIONAL_PATH } from '../../../routes/routes'
+import { CLIENTE_PATH, PROFISSIONAL_PATH } from '../../../utils/paths'
 import { CLIENTE, PROFISSIONAL } from '../../../config';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLogin } from '../../../hooks/useAuthHooks';

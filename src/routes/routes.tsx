@@ -1,43 +1,41 @@
-import NavBar from "../shared/components/Navbar/NavBar";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from '../pages/Layout';
 import HomeCliente from '../pages/HomeCliente';
 import HomeProfissional from '../pages/HomeProfissional';
 import ErrorScreen from '../pages/ErrorScreen';
 import Register from '../pages/Register';
-import React from 'react';
 import FormLogin from "../shared/components/FormLogin/FormLogin";
-import Home from '../pages/Home';
+import Home from '../pages/Home2';
 import { CLIENTE, PROFISSIONAL } from '../config';
 import {
   LOGIN_PATH,
-  REGISTER_PATH, 
-  CLIENTE_PATH, 
+  REGISTER_PATH,
+  CLIENTE_PATH,
   PROFISSIONAL_PATH
 } from '../utils/paths';
-import {
-    BrowserRouter,
-    Routes,
-    Route
-  } from "react-router-dom";
 
 
 const RouterSwitch: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavBar type="home" />} />
-        <Route path={LOGIN_PATH} element={<NavBar type="login"/>} />
-        <Route path={REGISTER_PATH+'/*'} element={<NavBar type="signup"/>} />
-        <Route path={CLIENTE_PATH} element={<NavBar type="client"/>} />
-        <Route path={PROFISSIONAL_PATH} element={<NavBar type="professional"/>} />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path={LOGIN_PATH} element={<FormLogin />} />
-        <Route path={REGISTER_PATH+CLIENTE_PATH} element={<Register type={CLIENTE} />} />
-        <Route path={REGISTER_PATH+PROFISSIONAL_PATH} element={<Register type={PROFISSIONAL} />} />
-        <Route path={CLIENTE_PATH} element={<HomeCliente />} />
-        <Route path={PROFISSIONAL_PATH} element={<HomeProfissional />} />
-
+        <Route path="/" element={<Layout type="home" />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path={LOGIN_PATH} element={<Layout type="login" />}>
+          <Route index element={<FormLogin />} />
+        </Route>
+        <Route path={REGISTER_PATH} element={<Layout type="signup" />}>
+          <Route path="cliente" element={<Register type={CLIENTE} />} />
+          <Route path="profissional" element={<Register type={PROFISSIONAL} />} />
+        </Route>
+        <Route path={CLIENTE_PATH} element={<Layout type="client" />}>
+          <Route index element={<HomeCliente />} />
+        </Route>
+        <Route path={PROFISSIONAL_PATH} element={<Layout type="professional" />}>
+          <Route index element={<HomeProfissional />} />
+        </Route>
         {/* Rotas de erros */}
         <Route path="/error/400" element={<ErrorScreen errorCode={400} />} />
         <Route path="/error/403" element={<ErrorScreen errorCode={403} />} />
@@ -47,8 +45,4 @@ const RouterSwitch: React.FC = () => {
   );
 };
 
-export { RouterSwitch, 
-          LOGIN_PATH,
-          REGISTER_PATH,
-          CLIENTE_PATH,
-          PROFISSIONAL_PATH};
+export { RouterSwitch };

@@ -57,7 +57,7 @@ Usados para fazer requisições para o back:
 	// Rotas do react para mudar componente
 	npm install react-router-dom
 
-	// ...
+	// ... Tela de Cadastro e Login
 	npm i @hookform/resolvers
 	npm i @mui/material/styles
 	npm i @emotion/react
@@ -67,4 +67,12 @@ Usados para fazer requisições para o back:
 	npm i react-hook-form
 	npm i yup
 	
-	
+	// ... Home
+	npm i @fortawesome/react-fontawesome
+	npm i @fortawesome/fontawesome-free
+	npm i @fortawesome/fontawesome-svg-core
+    npm i @fortawesome/free-brands-svg-icons
+    npm i @fortawesome/free-regular-svg-icons
+    npm i @fortawesome/free-solid-svg-icons
+	npm i react-bootstrap
+	npm i bootstrap

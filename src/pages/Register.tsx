@@ -10,11 +10,14 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import FooterButtons from './FooterButtons';
 import { useEffect, useState } from 'react';
-import { CLIENTE_PATH, PROFISSIONAL_PATH } from '../routes/routes'
 import { CLIENTE, PROFISSIONAL } from '../config';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRegister } from '../hooks/useAuthHooks';
 import { userData } from '../interface/userData';
+import {
+    CLIENTE_PATH,
+    PROFISSIONAL_PATH
+  } from '../utils/paths';
 
 type RegisterProps = {
     type: 'P' | 'C' | '' ;

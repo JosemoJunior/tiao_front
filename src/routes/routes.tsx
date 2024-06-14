@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '../pages/Layout';
-import HomeCliente from '../pages/HomeCliente';
-import HomeProfissional from '../pages/HomeProfissional';
+import HomeCliente from '../pages/HomeCli';
+import HomeProfissional from '../pages/HomePro';
 import ErrorScreen from '../pages/ErrorScreen';
 import Register from '../pages/Register';
 import FormLogin from "../shared/components/FormLogin/FormLogin";
 import Home from '../pages/Home2';
+import Profile from '../pages/Profile';
 import { CLIENTE, PROFISSIONAL } from '../config';
 import {
   LOGIN_PATH,
@@ -35,6 +36,9 @@ const RouterSwitch: React.FC = () => {
         </Route>
         <Route path={PROFISSIONAL_PATH} element={<Layout type="professional" />}>
           <Route index element={<HomeProfissional />} />
+        </Route>
+        <Route path="/profile/:email" element={<Layout type="professional" />}>
+          <Route index element={<Profile />} />
         </Route>
         {/* Rotas de erros */}
         <Route path="/error/400" element={<ErrorScreen errorCode={400} />} />

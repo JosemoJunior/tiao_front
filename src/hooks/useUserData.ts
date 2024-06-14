@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosPromise } from "axios"
+import axios, { AxiosError, AxiosPromise } from "axios";
 import { userData } from "../interface/userData";
 import { useQuery } from "@tanstack/react-query";
 import { API_URL } from "../config";
@@ -7,9 +7,8 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getIte
 
 const KEY = 'user-data';
 
-const fetchData = async (): AxiosPromise<userData> => {
-    try{
-        const email = localStorage.getItem('email');
+const fetchData = async (email: string): AxiosPromise<userData> => {
+    try {
         const emailData = { email: email };
         const response = axios.post(API_URL + '/user/profile', emailData);
         return response;
@@ -24,30 +23,17 @@ const fetchData = async (): AxiosPromise<userData> => {
         }
         throw error;
     }
-}
+};
 
-export function useAllUserData() {
+export function useUserData(email: string) {
     const query = useQuery({
-        queryFn: fetchData,
-        queryKey: [KEY],
+        queryFn: () => fetchData(email),
+        queryKey: [KEY, email],
         retry: 2
-    })
+    });
 
     return {
         ...query,
         data: query.data?.data
-    }
-}
-
-export function useUserData() {
-    const query = useQuery({
-        queryFn: fetchData,
-        queryKey: [KEY],
-        retry: 2
-    })
-
-    return {
-        ...query,
-        data: query.data?.data
-    }
+    };
 }
